@@ -1,11 +1,8 @@
 // https://www.youtube.com/watch?v=sfmL6bGbiN8
-//  0hs 16'  10''
+//  0hs 26'  10''
 import { useState } from 'react';
 import { useQuery } from 'react-query';
-
-// Styles
-//import { Wrapper } from './App.styles';
-import './App.css';
+import styled from 'styled-components';
 
 // Components 
 import Item from './Item/Item' ;
@@ -15,6 +12,12 @@ import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
 
+
+
+// Styles
+const Wrapper = styled.div`
+
+`;
 
 
 // types

@@ -21,8 +21,7 @@ Dependências:
 
 - Material-Ui Core and Icons
 - React-query
-- Styled-components
-- @Types/Styled-components
+
 
 
 
