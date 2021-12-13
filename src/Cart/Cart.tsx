@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Button from '@material-ui/core/Button';
 import CartItem from '../CartItem/CartItem';
 
 //Types
@@ -29,7 +28,14 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
 			<h2>Your Shopping Cart</h2>
 			{cartItems.length === 0 ? <p>No items in cart.</p> : null}
 			{cartItems.map((item) => {
-				return <CartItem />;
+				return (
+					<CartItem 
+						key={item.id}
+						item={item}
+						addToCart={addToCart}
+						removeFromCart={removeFromCart}
+					/>
+				);
 			})}
 		</Wrapper>
 	);
