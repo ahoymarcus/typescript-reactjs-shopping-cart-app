@@ -5,7 +5,8 @@ import { useQuery } from 'react-query';
 import styled from 'styled-components';
 
 // Components 
-import Item from './Item/Item' ;
+import Item from './Item/Item';
+import Cart from './Cart/Cart';
 import Drawer from '@material-ui/core/Drawer';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Grid from '@material-ui/core/Grid';
@@ -37,8 +38,8 @@ export type CartItemType = {
 	title: string;
 	amount: number; 
 };
-
-
+ 
+   
 const getProducts = async(): Promise<CartItemType[]> => {
 	return await (await fetch('https://fakestoreapi.com/products')).json();
 };
@@ -50,16 +51,21 @@ const App = () => {
 	const [ cartItems, setCartItems ] = useState([] as CartItemType[]);
   const { data, isLoading, error } = useQuery<CartItemType[]>('products', getProducts);
 	
+	// Renderização condicional para o Fetch
 	console.log(data); 
+	if (isLoading) return <LinearProgress />;
+	if (error) return <div>Something went wrong...</div>;
 	
-	const getTotalItems = (items: CartItemType[]) => null;
+	
+	const getTotalItems = (items: CartItemType[]) => {
+		return items.reduce((ack, item) => ack + item.amount, 0);
+	};
 	
 	const handleAddToCart = (clickedItem: CartItemType) => null;
 	
 	const handleRemoveFromCart = () => null;
 	
-	if (isLoading) return <LinearProgress />;
-	if (error) return <div>Something went wrong...</div>;
+	
 	
 	
 	return ( 
@@ -69,7 +75,11 @@ const App = () => {
 				open={cartOpen} 
 				onClose={() => setCartOpen(false)} 
 			>
-				Cart goes here
+				<Cart 
+					cartItems={cartItems}
+					addToCart={handleAddToCart}
+					removeFromCart={handleRemoveFromCart}
+				/>
 			</Drawer>
 			
 			<StyledButton onClick={() => setCartOpen(true)} >
