@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=sfmL6bGbiN8
-//  0hs 45'  50''
+//  0hs 52'  50''
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import styled from 'styled-components';
@@ -61,7 +61,21 @@ const App = () => {
 		return items.reduce((ack, item) => ack + item.amount, 0);
 	};
 	
-	const handleAddToCart = (clickedItem: CartItemType) => null;
+	const handleAddToCart = (clickedItem: CartItemType) => {
+		setCartItems(prev => {
+			// 1. Is the item already added to the cart?
+			const isItemInCart = prev.find(item => item.id === clickedItem.id);
+			
+			if (isItemInCart) {
+				return prev.map(item => 
+					item.id === clickedItem.id ? { ...item, amount: item.amount + 1} : item
+				);
+			}
+			
+			// 2. First time the item is added
+			return [...prev, { ...clickedItem, amount: 1 }];
+		});
+	};
 	
 	const handleRemoveFromCart = () => null;
 	
