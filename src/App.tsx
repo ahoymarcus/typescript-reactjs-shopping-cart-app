@@ -77,7 +77,25 @@ const App = () => {
 		});
 	};
 	
-	const handleRemoveFromCart = () => null;
+	const handleRemoveFromCart = (id: number) => {
+		setCartItems(prev => (
+			
+			// Down at the bottom we see the initial
+			// value for the acumulator [] and its
+			// type...
+			prev.reduce((ack, item) => {
+				if (item.id === id) {
+					// 1. Remove the item all together
+					if (item.amount === 1) return ack;
+					
+					return [...ack, { ...item, amount: item.amount - 1 }];
+				} else {
+					// If not the item clicked just return the same value for the item
+					return [ ...ack, item ];
+				}
+			}, [] as CartItemType[])
+		));
+	};
 	
 	
 	
