@@ -26,6 +26,10 @@ const Wrapper = styled.div`
 		object-fit: cover;
 		margin-left: 40px;
 	}
+	
+	h3 {
+		color: rgb(84 60 51);
+	}
 `;
 
 

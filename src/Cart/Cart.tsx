@@ -10,6 +10,12 @@ const Wrapper = styled.aside`
 	font-family: Arial, Helvetica, sans-serif;
 	width: 500px;
 	padding: 20px;
+	
+	h2 {
+		color: #181802;
+		font-size: 1.7em;
+		margin-top: 30px;
+	}
 `;
 
 
@@ -27,7 +33,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
 	const calculateTotal = (items: CartItemType[]) => {
 		return (
 			<h2>
-				Total: ${items.reduce((ack: number, item) => ack + item.amount * item.price, 0)}
+				Total: ${items.reduce((ack: number, item) => ack + item.amount * item.price, 0).toFixed(2)}
 			</h2>
 		);
 	};

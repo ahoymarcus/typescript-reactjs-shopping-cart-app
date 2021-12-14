@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 	height: 100%;
 	border: 1px solid lightblue;
 	border-radius: 20px;
+	background-color: #dfdfb1; /*#bdbd8e;*/
 	
 	img {
 		max-length: 250px;

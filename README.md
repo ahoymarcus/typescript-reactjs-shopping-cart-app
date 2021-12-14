@@ -3,7 +3,7 @@
 
 <br />
 
-O projeto constrói um app que renderiza um mostruário de produtos a partir de dados requisitado de uma API externa. Além de apresentar os produtos, o app permite adicionar produtos ao carrinho de compra e agregar os valores dos produtos selecionados, enquanto o usuário pode continuar adicionando e removendo produtos.:[^1]
+Projeto para criar um app que renderiza um mostruário de produtos a partir de dados requisitado de uma API externa. E além de apresentar os produtos, o app permite adicionar produtos ao carrinho de compra, enquanto controlar a agregação dos valores dos itens sendo incluídos ou excluídos da seleção.:[^1]
 
 
 
