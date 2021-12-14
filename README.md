@@ -17,7 +17,7 @@ Finalmente, para auxiliar na estruturação e na estilização dos componentes, 
 
 R:
 
-- [App Shopping Cart with  React-JS and TypeScript no Netlify]()
+- [App Shopping Cart with  React-JS and TypeScript no Netlify](https://typescript-reactjs-shopping-cart-app.netlify.app/)
 
 <br />
 
